@@ -1,0 +1,12 @@
+img {
+    width: 90px;
+}
+
+ .th {
+    width: max-content!important;
+}
+
+h3 {
+    font-family: Helvetica;
+    margin-bottom: 10px;
+}

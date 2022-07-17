@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import FormComp from "./Form";
+import { BrowserRouter, Routes, Route, Link, useParams } from "react-router-dom";
+import AllUser from "./AllUser";
+import SingleUser from "./SingleUser";
 
 function App() {
+  let  {id}  = useParams();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<FormComp />}/>
+          <Route exact path="/all-users" element={<AllUser />}/>
+          <Route exact path="/single-user/:id" element={<SingleUser />}/>
+        </Routes>
+    </BrowserRouter>
   );
 }
 
